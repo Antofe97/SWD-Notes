@@ -1,3 +1,12 @@
 <h1> <%= @note.title %> </h1>
 
 <p> <%= @note.body %> </p>
+
+<img src="<%= @note.image %>">
+
+<ul>
+  <li><%= link_to "Editar", edit_note_path(@note) %></li>
+  <li><%= link_to "Eliminar", note_path(@note),
+                  method: :delete,
+                  data: { confirm: "¿Desea eliminar esta nota?" } %></li>
+</ul>
