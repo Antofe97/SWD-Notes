@@ -1,11 +1,16 @@
-<h1>Notas</h1>
+<h1>Notes</h1>
 
 <ul>
   <% @notes.each do |note| %>
     <li>
+        <span>
         <%= link_to note.title, note %>
+        </span>
+
     </li>
   <% end %>
 </ul>
 
-<%= link_to "Nueva Nota", new_note_path %>
+<%=link_to "New Note", new_note_path, class:"boton";%>
+
+
