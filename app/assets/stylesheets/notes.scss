@@ -42,6 +42,7 @@ body {
 .clearfix:after {
 	clear: both;
 }
+
 .boton{
 background-color: #201f1f;
 border-radius: 8px;
@@ -53,26 +54,32 @@ display: inline-block;
 font-size: 16px;
 margin: 4px 2px;
 cursor: pointer;
+font-weight: bold;
 }
+
 .boton:hover{
     background-color:  #fdfdfd;
     color: #201f1f;
     font-weight: bold;
+    text-decoration: underline;
 }
+
 ul{
     list-style-image: url('note_icon.png');
     
 }
+
 li span{
     vertical-align: middle;
     display:inline-block;
     margin-bottom: 15px;
 }
+
 h1{
     color:#fdfdfd
 }
-a {
 
+a {
 	color: $light_gray;
 	text-decoration: none;
     font-weight: bold;
