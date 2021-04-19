@@ -21,10 +21,15 @@ $light_gray: #d7dbda;
 
 body {
     
-    background-color: $wine;
-	padding-top: 4.5rem;
+    background-image: url("spidey-background.jpg");
+    background-color: #cccccc;
+    height: 800px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+	
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
-    margin: 20;
+    
 }
 
 
@@ -76,7 +81,16 @@ li span{
 }
 
 h1{
-    color:#fdfdfd
+    color:#fdfdfd;
+    margin-left: 20px;
+    
+}
+
+h2{
+    color:#fdfdfd;
+    text-align: center;
+    font-size: 30px;
+    
 }
 
 a {
@@ -114,4 +128,48 @@ textarea {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+nav li{
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 35px;
+}
+
+nav a{
+    color: #fdfdfd;
+    text-decoration: none;
+    text-transform: 14px;
+    font-size: 21px;
+   
+    
+}
+nav a:hover{
+    color:$wine;
+}
+
+.h1_container{
+    background: #364A73;
+    color:#d7dbda;
+    font-style: italic;
+    font-size: 12px;
+    font-family:Arial, Helvetica, sans-serif;
+    padding-right: auto;
+    padding-bottom: 20px;
+    border-radius: 30px;
+    
+}
+
+img{
+    height: 80px;
+    float:left;
+    margin-left: 25px;
+    
+
 }
