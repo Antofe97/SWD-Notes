@@ -1,6 +1,10 @@
 
 <h1> <%= @note.title %> </h1>
 
+<p>
+  Nota creada por: <%= @note.user.email %>
+</p>
+
 <p> <%= @note.body %> </p>
 
 <img src="<%= @note.image %>">
