@@ -3,6 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   has_many :notes
+
+  validates :email, presence: true
+  validates :name, presence: true
   
   def is_normal_user?
     self.permission_level >=1
