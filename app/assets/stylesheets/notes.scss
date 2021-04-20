@@ -5,6 +5,7 @@ $dark_gray: #cabaf0;
 $wine: #960126f6;
 $light_gray: #d7dbda;
 
+
 @mixin bold_font {
 	font-family: "Brandon Grotesque","Helvetica Neue", Helvetica, sans-serif;
 	font-weight: bold;
@@ -23,7 +24,7 @@ body {
     
     background-image: url("spidey-background.jpg");
     background-color: #cccccc;
-    height: 800px; /* You must set a specified height */
+    height: 1000px; /* You must set a specified height */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
@@ -66,7 +67,7 @@ font-weight: bold;
     background-color:  #fdfdfd;
     color: #201f1f;
     font-weight: bold;
-    text-decoration: underline;
+    
 }
 
 ul{
@@ -98,9 +99,10 @@ a {
 	color: $light_gray;
 	text-decoration: none;
     font-weight: bold;
+    padding: 15px 32px;
 	&:hover {
 		color: #201f1f;
-        text-decoration: underline;
+        
 	}
 }
 
@@ -168,13 +170,13 @@ nav a:hover{
     
 }
 
-img{
+.image1{
     height: 80px;
     float:left;
     margin-left: 25px;
-    
 
-  
-
-
+}
+.image2{
+    height:20px;
+    margin-left:25px;
 }
