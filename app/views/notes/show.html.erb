@@ -1,13 +1,17 @@
 
 <h1> <%= @note.title %> </h1>
-
+<div class="container">
 <p style="color:white">
   Note created by: <%= @note.user.email %>
 </p>
+</div>
+ 
 <hr>
-<p> <%= @note.body%> </p>
-
-<img src="<%= @note.image %>">
+<div class="container">
+  <p> <%= @note.body%> 
+    </p>
+<img src="<%= @note.image %>" class="image2">
+</div>
 
 <ul>
   <%= link_to"Edit", edit_note_path(@note), class: "boton" %></li>
