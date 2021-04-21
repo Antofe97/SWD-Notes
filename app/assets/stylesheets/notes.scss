@@ -145,8 +145,8 @@ nav ul{
 
 nav li{
     display: inline-block;
-    margin-left: 70px;
-    padding-top: 35px;
+    margin-left: 220px;
+    padding-top: 10px;
 }
 
 nav a{
@@ -162,6 +162,7 @@ nav a:hover{
 }
 
 .h1_container{
+	box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     background: #364A73;
     color:#d7dbda;
     font-style: italic;
@@ -188,7 +189,6 @@ nav a:hover{
 	
 }
 
-
 p{
     font-weight: bold;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -202,16 +202,21 @@ p{
     text-justify: inter-word;
 
 }
-hr{
-    width: 500px;
-    text-align:left;
-    margin-left:0;
-    border: 3px solid rgb(238, 238, 238);
-}	
+	
+hr {
+	width:500px;
+	border: 0; 
+	height: 2px; 
+	text-align: center; 
+	background-image: linear-gradient(left, #fff, #000, #fff);
+}
 .container{
 	box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 	height:auto;
 	width:500px;
 	background-color:#364A73;
 	overflow: hidden;
+}
+.cosas_login{
+	text-align: right;
 }
