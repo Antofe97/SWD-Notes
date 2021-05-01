@@ -1,0 +1,22 @@
+<h1>Edit User</h1>
+<%= form_for @user do |f|%>
+
+    <div class="field">
+        <%= f.label :email%><br>
+        <%= f.text_field :email%><br>
+    </div>
+
+    <div class="field">
+        <%= f.label :password%><br>
+        <%= f.password_field :password%><br>
+    </div>
+
+    <% if is_admin? %>
+        <div class="field">
+            <%= f.label :admin %>
+            <%= f.check_box :admin %>
+        </div>
+
+    <%end%>
+    <%= f.submit %>
+<%end%>

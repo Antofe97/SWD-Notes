@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_18_172934) do
+ActiveRecord::Schema.define(version: 2021_05_01_121406) do
 
   create_table "notes", force: :cascade do |t|
     t.string "title"
@@ -18,6 +18,17 @@ ActiveRecord::Schema.define(version: 2021_03_18_172934) do
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin", default: false
+  end
+
+  add_foreign_key "notes", "users"
 end

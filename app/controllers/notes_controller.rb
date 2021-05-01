@@ -1,11 +1,21 @@
 class NotesController < ApplicationController
   def index
-    @notes = Note.all
+      @notes = Note.where(user_id: current_user.id)
+  end
+
+  def user_notes
+    @notes = Note.where(user_id: params[:id])
   end
 
   def show
     @note = Note.find(params[:id])
+    if @note.user_id == current_user.id || is_admin?
+
+    else 
+      redirect_to notes_path
+    end
   end
+
 
   def new
     @note = Note.new
@@ -13,6 +23,8 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(note_params)
+    
+    @note.user_id = current_user.id
 
     if @note.save
       redirect_to @note
@@ -23,6 +35,11 @@ class NotesController < ApplicationController
 
   def edit
     @note = Note.find(params[:id])
+    if @note.user_id == current_user.id || is_admin?
+
+    else
+      redirect_to notes_path
+    end
   end
 
   def update
@@ -39,12 +56,12 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     @note.destroy
 
-    redirect_to root_path
+    redirect_to notes_path
   end
 
   private
     def note_params
-      params.require(:note).permit(:title, :body, :image)
+      params.require(:note).permit(:title, :body, :image, :user_id)
     end
   
 end
