@@ -8,6 +8,15 @@ Note created by: <%= @note.user.email %>
 
 <img src="<%= @note.image %>">
 
+<p style="color:white">
+Collection: 
+<% if @collection %>
+  <%= @collection.name %>
+<%else%>
+  None
+<%end%>
+</p>
+
 <ul>
   <%= link_to"Edit", edit_note_path(@note), class: "boton" %></li>
   <%= link_to "Delete", note_path(@note), class:"boton",

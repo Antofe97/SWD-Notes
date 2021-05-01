@@ -1,16 +1,3 @@
-<h1>Notes</h1>
-
-<ul>
-  <% @notes.each do |note| %>
-    <li>
-        <span>
-        <%= link_to note.title, note %>
-        </span>
-
-    </li>
-  <% end %>
-</ul>
+<%= render "listNotes", note: @notes %>
 
 <%=link_to "New Note", new_note_path, class:"boton";%>
-
-

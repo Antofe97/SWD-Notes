@@ -19,7 +19,9 @@
         <%= form.label :image %><br>
         <%= form.text_field :image %>
     </div>
-  
+
+      <%= form.select :collection_id, @collections.map { |c| [c.name, c.id] } << ['None', nil] %>
+    
     <div>
       <%= form.submit class: "boton" %>
     </div>

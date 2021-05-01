@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :collections
   resources :users #, only: [:new, :create, :index, :show, :edit]
   get 'users/:id/notes', to: "notes#user_notes"
+  get 'users/:id/collections', to: "collections#user_collections"
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
