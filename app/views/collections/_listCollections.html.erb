@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Collections</h1>
-
+<div class="text-center">
+<div class ="btn-group gap-2 col-md-2  mx-3 " >
 <table>
   <thead>
     <tr>
@@ -9,6 +10,7 @@
       <th>User</th>
       <th colspan="3"></th>
     </tr>
+
   </thead>
 
   <tbody>
@@ -16,13 +18,15 @@
       <tr>
         <td><%= collection.name %></td>
         <td><%= collection.user_id %></td>
-        <td><%= link_to 'Show', collection %></td>
-        <td><%= link_to 'Edit', edit_collection_path(collection) %></td>
-        <td><%= link_to 'Destroy', collection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        </tr>
+        <td><%= link_to 'Show', collection, class:"btn btn-dark"; %></td>
+        <td><%= link_to 'Edit', edit_collection_path(collection), class:"btn btn-dark"; %></td>
+        <td><%= link_to 'Destroy', collection, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-dark"; %></td>
     <% end %>
   </tbody>
 </table>
 
+</div>
+</div>
 <br>
 

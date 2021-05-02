@@ -1,6 +1,14 @@
 <h1>Editing Collection</h1>
-
+<div class="text-center p-3">
+<div class ="btn-group gap-2 col-md-2  mx-3 " >
 <%= render 'form', collection: @collection %>
-
-<%= link_to 'Show', @collection %> |
-<%= link_to 'Back', collections_path %>
+</div>
+</div>
+<div class="text-center p-3">
+<div class ="btn-group gap-2 col-md-2  mx-3 " >
+<tr>
+<td><%= link_to 'Show', @collection , class:"btn btn-dark";%> </td>
+<td><%= link_to 'Back', collections_path , class:"btn btn-dark";%> </td>
+</tr>
+</div>
+</div>
