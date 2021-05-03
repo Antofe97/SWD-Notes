@@ -1,6 +1,10 @@
-<h1>Edit User</h1>
-<div class="text-center">
-<div class ="btn-group gap-2 col-md-2  mx-3 " >
+<div class="container">
+  <div class="row align-items-center">
+    <h1>Edit User</h1>
+  </div>
+</div>
+
+<div class="grid container justify-content-md-center">
 <%= form_for @user do |f|%>
 
     <div class="field">
@@ -16,11 +20,12 @@
     <% if is_admin? %>
         <div class="field">
             <%= f.label :admin %>
-            <%= f.check_box :admin %>
+            <%= f.check_box :admin %> 
         </div>
 
     <%end%>
-    <%= f.submit %>
+    <br>
+    <%= f.submit:Update, class: 'btn btn-dark'%>
 <%end%>
 
 </div>

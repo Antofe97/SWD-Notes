@@ -1,8 +1,33 @@
-<h1>Login</h1>
+<div class="container">
+  <div class="row align-items-center">
+    <h1>Log In</h1>
+  </div>
+</div>
+
+
+
+
+<div class="grid container">
+
    <%= form_tag '/login' do %>
-   <%= label_tag :email%>
-   <%= text_field_tag :email %>
-   <%= label_tag :password%>
-   <%= password_field_tag :password%>
-   <%= submit_tag "Login"%>
+   <grid item xs={6}> 
+      <%= label_tag :email%><br>
+   </grid>   
+   <grid item xs={6}>
+      <%= text_field_tag :email %><br>
+   </grid>
+   <grid item xs={6}>
+      <%= label_tag :password%><br>
+   </grid>
+   <grid item xs={6}>
+      <%= password_field_tag :password%><br>
+   </grid>
+   <grid item xs={6}>
+      <%= submit_tag "Login" , class: 'btn btn-dark'%>
+   </grid>
+   
+   </div>
+  
 <%end%>
+
+

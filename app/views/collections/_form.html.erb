@@ -10,14 +10,17 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
+  <div class ="grid container justify-content-md-center">
+  <grid item xs={6}>
+    <%= form.label :Name %>
+    </grid>
+    <grid item xs={6}>
     <%= form.text_field :name %>
-  </div>
-
-
-  <div class="actions">
-    <%= form.submit %>
+  </grid>
+  <br>
+  <grid item xs={6}>
+    <%= form.submit:Update, class:'btn btn-dark'%>
+  </grid>
+  <br>
   </div>
 <% end %>
