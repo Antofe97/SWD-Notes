@@ -1,4 +1,11 @@
-<h1>Edit User</h1>
+<div class="container">
+  <div class="row align-items-center">
+    <h1>Edit User</h1>
+  </div>
+</div>
+
+<div class="grid container align-items-center">
+<div class="text-center p-3">
 <%= form_for @user do |f|%>
 
     <div class="field">
@@ -14,9 +21,13 @@
     <% if is_admin? %>
         <div class="field">
             <%= f.label :admin %>
-            <%= f.check_box :admin %>
+            <%= f.check_box :admin %> 
         </div>
 
     <%end%>
-    <%= f.submit %>
+    <br>
+    <%= f.submit:Update, class: 'btn btn-dark'%>
 <%end%>
+</div>
+</div>
+</div>

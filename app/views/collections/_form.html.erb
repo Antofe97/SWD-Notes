@@ -8,16 +8,20 @@
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
-    </div>
+ 
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
   </div>
-
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class ="grid container align-items-center">
+    <div class="text-center p-3">
+      <grid item xs={6}>
+        <%= form.label :Name %>
+      </grid>
+      <grid item xs={6}>
+        <%= form.text_field :name %>
+      </grid><br>
+      <grid item xs={6}>
+        <%= form.submit:Update, class:'btn btn-dark'%>
+      </grid><br>
+   </div>
   </div>
 <% end %>

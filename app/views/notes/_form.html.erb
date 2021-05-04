@@ -23,9 +23,8 @@
       <%= form.select :collection_id, @collections.map { |c| [c.name, c.id] } << ['None', nil] %>
     
     <div>
-      <%= form.submit class: "boton" %>
+
+      <%= form.submit class: "btn btn-dark mt-2" %>
     </div>
   <% end %>
-  
-
   

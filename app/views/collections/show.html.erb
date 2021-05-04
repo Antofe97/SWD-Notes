@@ -1,14 +1,16 @@
 <p id="notice"><%= notice %></p>
-
+<div class="text-center">
+    <div class ="btn-group gap-2 col-md-2  mx-3 " >
 <p>
   <strong>Name:</strong>
-  <%= @collection.name %>
+  <%= @collection.name%>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @collection.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_collection_path(@collection) %> |
-<%= link_to 'Back', collections_path %>
+</div>
+</div>
+<div class="text-center">
+    <div class ="btn-group gap-2 col-md-2  mx-3 " >
+<%= link_to 'Edit', edit_collection_path(@collection) , class:"btn btn-dark";%> |
+<%= link_to 'Back', collections_path, class:"btn btn-dark"; %>
+</div>
+</div>
