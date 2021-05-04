@@ -11,6 +11,10 @@ class NotesController < ApplicationController
     @notes = Note.where(user_id: params[:id])
   end
 
+  def collection_notes
+    @notes = Note.where(collection_id: params[:id_collection])
+  end
+
   def show
     @note = Note.find(params[:id])
 

@@ -18,6 +18,7 @@ $light_gray: #d7dbda;
     
 }
 
+
 body {
     
     background-color: $wine;
@@ -42,22 +43,39 @@ body {
 	clear: both;
 }
 
+.boton{
+background-color: #201f1f;
+border-radius: 8px;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+font-weight: bold;
+}
+
+.boton:hover{
+    background-color:  #fdfdfd;
+    color: #201f1f;
+    font-weight: bold;
+    text-decoration: underline;
+}
 
 ul{
-   
-    list-style-image: url('user.png');
-    margin-block-start: initial;
+    list-style-image: url('note_icon.png');
     
 }
 
 li span{
-   
-    display:ruby-text-container;
-    color:white;
-    
+    vertical-align: middle;
+    display:inline-block;
+    margin-bottom: 15px;
 }
+
 h1{
-    text-align: center;
     color:#fdfdfd
 }
 
