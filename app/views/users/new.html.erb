@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container">
   <div class="row align-items-center">
     <h1>Sign Up</h1>
@@ -7,20 +8,20 @@
 
 <div class ="grid container align-items-center">
 <div class="text-center p-3">
-
+=======
+<h1>Sign Up</h1>
 <%= form_for @user do |f|%>
-        <grid item xs={6}>
-            <%= f.label :email%><br>
-        </grid>
-        <grid item xs={6}>
-            <%= f.text_field :email%><br>
-        </grid>
-        <grid item xs={6}>
-            <%= f.label :password%><br>
-        </grid>
-        <div class="row justify-content-md-center">
-            <grid item xs={6}>
+
+    <div class="field">
+        <%= f.label :email%><br>
+        <%= f.text_field :email%><br>
+    </div>
+>>>>>>> parent of 5745e8c (Boostrap changes x2)
+
+    <div class="field">
+        <%= f.label :password%><br>
         <%= f.password_field :password%><br>
+<<<<<<< HEAD
             </grid>
         <grid item xs={6}>
           <%= f.label :admin %>
@@ -32,7 +33,14 @@
             <%= f.submit:Create, class: 'btn btn-dark' %>
         </grid>
         </div>
+=======
+>>>>>>> parent of 5745e8c (Boostrap changes x2)
     </div>
-</div>
 
+    <div class="field">
+        <%= f.label :admin %>
+        <%= f.check_box :admin %>
+    </div>
+
+    <%= f.submit %>
 <%end%>

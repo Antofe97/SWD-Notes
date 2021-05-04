@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root 'sessions#welcome'
   resources :collections
   resources :users #, only: [:new, :create, :index, :show, :edit]
   get 'users/:id/notes', to: "notes#user_notes"

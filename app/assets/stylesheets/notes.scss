@@ -18,20 +18,13 @@ $light_gray: #d7dbda;
     
 }
 
-body{	
-        background-image: url("back.jpg") ;
-        background-position: center;
-        background-repeat:no-repeat;
-        background-size:cover;
-		background-attachment: fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        height:auto;
-		background-position-y: 30px;
-
-
-    }
+body {
+    
+    background-color: $wine;
+	padding-top: 4.5rem;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+    margin: 20;
+}
 
 
 .wrapper_with_padding {
@@ -48,9 +41,7 @@ body{
 .clearfix:after {
 	clear: both;
 }
-.invisible {
-  visibility: hidden;
-}
+
 
 ul{
    
@@ -71,7 +62,7 @@ h1{
 }
 
 a {
-	color: #fdfdfd;
+	color: $light_gray;
 	text-decoration: none;
     font-weight: bold;
 	&:hover {
@@ -106,4 +97,3 @@ textarea {
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
-
