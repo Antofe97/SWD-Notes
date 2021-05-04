@@ -53,17 +53,18 @@ body{
 }
 
 ul{
-    margin-left: 30px;
+   
     list-style-image: url('user.png');
+    margin-block-start: initial;
     
 }
 
 li span{
-    vertical-align: middle;
-    display:inline-block;
-    margin-bottom: 15px;
+   
+    display:ruby-text-container;
+    color:white;
+    
 }
-
 h1{
     text-align: center;
     color:#fdfdfd

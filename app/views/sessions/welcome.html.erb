@@ -1,10 +1,11 @@
-<h1>Welcome little friend! </h1>
+<h1>Welcome friendly neighbor! </h1>
+<h2 class= "text-center">Need to use some sticky notes? Go ahead! </h2>
 <div class="row">
     <img src="https://pa1.narvii.com/7236/c29ba7647eb6229726b0ff678a8bc4a89241e8b0r1-400-295_hq.gif" class="col-md-2 float-md-end mb-8 offset-md-5"> 
 
 </div>
 <% if logged_in? %>
-    <h2 class= "text-center">You are logged in as : <%= current_user.email %></h2>
+    <p class= "text-center">You are logged in as : <%= current_user.email %></p>
 <%end%>
 <div class="text-center p-3">
 <div class ="btn-group gap-2 col-md-2  mx-3 " >
