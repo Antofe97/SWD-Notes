@@ -1,7 +1,8 @@
-<p id="notice"><%= notice %></p>
+
 <div class="container">
   <div class="row align-items-center">
     <h1>Collections</h1>
+    <p class = "text-center" id="notice"><%= notice %></p>
   </div>
 </div>
 <div class="text-center">
@@ -19,10 +20,8 @@
   <tbody>
     <% @collections.each do |collection| %>
       <tr>
-        <td><%= collection.name %></td>
+        <td><%= link_to collection.name, "collections/#{collection.id}/notes" %></td>
         <td>
-        
-        <td><%= link_to 'Show', collection, class:"btn btn-dark"; %></td>
         <td><%= link_to 'Edit', edit_collection_path(collection), class:"btn btn-dark"; %></td> 
         <td><%= link_to 'Destroy', collection, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-dark"; %></td>
         </tr>
