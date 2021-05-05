@@ -44,8 +44,10 @@ class NotesController < ApplicationController
     @note.user_id = current_user.id
 
     if @note.save
+      flash[:success] =  "Note was successfully created."
       redirect_to @note
     else
+      flash[:danger] = "There was a problem, try again." 
       render :new
     end
   end
@@ -64,8 +66,10 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
 
     if @note.update(note_params)
+      flash[:info] =  "Note was successfully updated."
       redirect_to @note
     else
+      flash[:danger] = "There was a problem, try again." 
       render :edit
     end
   end
@@ -73,7 +77,7 @@ class NotesController < ApplicationController
   def destroy
     @note = Note.find(params[:id])
     @note.destroy
-
+    flash[:danger] = "The note was successfully destroyed." 
     redirect_to notes_path
   end
 

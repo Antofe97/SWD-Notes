@@ -1,4 +1,5 @@
 class CollectionsController < ApplicationController
+  
   before_action :set_collection, only: %i[ show edit update destroy ]
   before_action :admin_permission, only: [:user_collections]
 
@@ -42,37 +43,27 @@ class CollectionsController < ApplicationController
     @collection = Collection.new(collection_params)
     @collection.user_id = current_user.id
 
-    respond_to do |format|
-      if @collection.save
-        format.html { redirect_to @collection, notice: "Collection was successfully created." }
-        format.json { render :show, status: :created, location: @collection }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @collection.errors, status: :unprocessable_entity }
-      end
+    if @collection.save
+      flash[:success] =  "Collection was successfully created."
+      redirect_to @collection
     end
+    
   end
 
   # PATCH/PUT /collections/1 or /collections/1.json
   def update
-    respond_to do |format|
       if @collection.update(collection_params)
-        format.html { redirect_to collections_path, notice: "Collection was successfully updated." }
-        format.json { render :show, status: :ok, location: @collection }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @collection.errors, status: :unprocessable_entity }
+        flash[:info] =  "Collection was successfully updated."
+        redirect_to collections_path
       end
-    end
   end
 
   # DELETE /collections/1 or /collections/1.json
   def destroy
     @collection.destroy
-    respond_to do |format|
-      format.html { redirect_to collections_url, notice: "Collection was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    flash[:danger] = "The collection was successfully destroyed." 
+    redirect_to collections_url 
+
   end
 
   private
