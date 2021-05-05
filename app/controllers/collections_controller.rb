@@ -1,5 +1,6 @@
 class CollectionsController < ApplicationController
-  
+  add_flash_types :danger, :info, :warning, :success, :notice
+
   before_action :set_collection, only: %i[ show edit update destroy ]
   before_action :admin_permission, only: [:user_collections]
 
@@ -19,8 +20,10 @@ class CollectionsController < ApplicationController
     if @collection.user_id == current_user.id || is_admin?
 
     else 
+      flash[:danger] = "Unauthorized" 
       redirect_to collections_path
     end
+
   end
 
   # GET /collections/new
@@ -34,6 +37,7 @@ class CollectionsController < ApplicationController
     if @collection.user_id == current_user.id || is_admin?
 
     else 
+      flash[:danger] = "Unauthorized" 
       redirect_to collections_path
     end
   end

@@ -14,14 +14,16 @@ class ApplicationController < ActionController::Base
     end
 
     def authorized
-        redirect_to '/welcome' unless logged_in?
+        redirect_to '/welcome', danger: "Unauthorized" unless logged_in?
     end
 
     def admin_permission
-        redirect_to notes_path unless is_admin?
+        redirect_to notes_path, danger: "Unauthorized" unless is_admin?
     end
 
     def is_admin?
-        current_user.admin?
+        current_user.admin?     
     end
+
+
 end

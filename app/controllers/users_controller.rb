@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   add_flash_types :danger, :info, :warning, :success, :notice
   skip_before_action :authorized, only: [:new, :create]
   before_action :admin_permission, only: [:index]
@@ -9,7 +10,6 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-
   end
 
   def edit
@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     if @user.id == current_user.id || is_admin?
 
     else 
+      flash[:danger] = "Unauthorized" 
       redirect_to notes_path
     end
   end
@@ -26,7 +27,13 @@ class UsersController < ApplicationController
 
     if @user.update(params.require(:user).permit(:email, :password, :admin))
       flash[:info] = "User's Profile sucesfully updated" 
-      redirect_to users_path
+
+      if is_admin?
+        redirect_to users_path
+      else
+        redirect_to notes_path
+      end
+
     else
       render :edit
     end
@@ -37,10 +44,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(params.require(:user).permit(:email, :password, :admin))
-    session[:user_id] = @user.id
-    flash[:success] = "Successfull Sing In!"
-    redirect_to '/welcome'
+    if !User.where(email: params[:user][:email]).empty?
+      flash[:warning] = "The user already exists"
+      redirect_to '/users/new'
+    else
+      @user = User.create(params.require(:user).permit(:email, :password, :admin))
+      session[:user_id] = @user.id
+      flash[:success] = "Successfull Sing In!"
+      redirect_to '/welcome'
+    end
   end
 
   def destroy

@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
+  add_flash_types :danger, :info, :warning, :success, :notice
 
-  before_action :admin_permission, only: [:user_notes]
+  before_action :admin_permission, only: [:user_notes,:collection_notes]
 
   def index
       @notes = Note.where(user_id: current_user.id)
@@ -8,7 +9,12 @@ class NotesController < ApplicationController
 
   #admin_management
   def user_notes
-    @notes = Note.where(user_id: params[:id])
+    
+    if is_admin?
+      @notes = Note.where(user_id: params[:id])
+    else
+      flash[:danger] = "Unauthorized" 
+    end 
   end
 
   def collection_notes
@@ -27,6 +33,7 @@ class NotesController < ApplicationController
     if @note.user_id == current_user.id || is_admin?
 
     else 
+      flash[:danger] = "Unauthorized" 
       redirect_to notes_path
     end
   end
@@ -58,6 +65,7 @@ class NotesController < ApplicationController
     if @note.user_id == current_user.id || is_admin?
 
     else
+      flash[:danger] = "Unauthorized" 
       redirect_to notes_path
     end
   end
